@@ -1,0 +1,9 @@
+E:\Documentos\ProjetoInvillia\CompartilharJogos\CompartilharJogos.Domain\bin\Debug\netstandard2.0\CompartilharJogos.Domain.deps.json
+E:\Documentos\ProjetoInvillia\CompartilharJogos\CompartilharJogos.Domain\bin\Debug\netstandard2.0\CompartilharJogos.Domain.dll
+E:\Documentos\ProjetoInvillia\CompartilharJogos\CompartilharJogos.Domain\bin\Debug\netstandard2.0\CompartilharJogos.Domain.pdb
+E:\Documentos\ProjetoInvillia\CompartilharJogos\CompartilharJogos.Domain\obj\Debug\netstandard2.0\CompartilharJogos.Domain.AssemblyInfoInputs.cache
+E:\Documentos\ProjetoInvillia\CompartilharJogos\CompartilharJogos.Domain\obj\Debug\netstandard2.0\CompartilharJogos.Domain.AssemblyInfo.cs
+E:\Documentos\ProjetoInvillia\CompartilharJogos\CompartilharJogos.Domain\obj\Debug\netstandard2.0\CompartilharJogos.Domain.csproj.CoreCompileInputs.cache
+E:\Documentos\ProjetoInvillia\CompartilharJogos\CompartilharJogos.Domain\obj\Debug\netstandard2.0\CompartilharJogos.Domain.dll
+E:\Documentos\ProjetoInvillia\CompartilharJogos\CompartilharJogos.Domain\obj\Debug\netstandard2.0\CompartilharJogos.Domain.pdb
+E:\Documentos\ProjetoInvillia\CompartilharJogos\CompartilharJogos.Domain\obj\Debug\netstandard2.0\CompartilharJogos.Domain.csprojAssemblyReference.cache

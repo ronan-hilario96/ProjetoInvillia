@@ -1,0 +1,4 @@
+E:\Documentos\ProjetoInvillia\CompartilharJogos\CompartilharJogos.Dominio\obj\Debug\netstandard2.0\CompartilharJogos.Dominio.csprojAssemblyReference.cache
+E:\Documentos\ProjetoInvillia\CompartilharJogos\CompartilharJogos.Dominio\obj\Debug\netstandard2.0\CompartilharJogos.Dominio.AssemblyInfoInputs.cache
+E:\Documentos\ProjetoInvillia\CompartilharJogos\CompartilharJogos.Dominio\obj\Debug\netstandard2.0\CompartilharJogos.Dominio.AssemblyInfo.cs
+E:\Documentos\ProjetoInvillia\CompartilharJogos\CompartilharJogos.Dominio\obj\Debug\netstandard2.0\CompartilharJogos.Dominio.csproj.CoreCompileInputs.cache

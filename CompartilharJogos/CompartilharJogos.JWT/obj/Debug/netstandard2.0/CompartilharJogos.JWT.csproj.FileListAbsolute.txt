@@ -1,0 +1,12 @@
+E:\Documentos\ProjetoInvillia\CompartilharJogos\CompartilharJogos.JWT\bin\Debug\netstandard2.0\CompartilharJogos.JWT.deps.json
+E:\Documentos\ProjetoInvillia\CompartilharJogos\CompartilharJogos.JWT\bin\Debug\netstandard2.0\CompartilharJogos.JWT.dll
+E:\Documentos\ProjetoInvillia\CompartilharJogos\CompartilharJogos.JWT\bin\Debug\netstandard2.0\CompartilharJogos.JWT.pdb
+E:\Documentos\ProjetoInvillia\CompartilharJogos\CompartilharJogos.JWT\bin\Debug\netstandard2.0\CompartilharJogos.Domain.dll
+E:\Documentos\ProjetoInvillia\CompartilharJogos\CompartilharJogos.JWT\bin\Debug\netstandard2.0\CompartilharJogos.Domain.pdb
+E:\Documentos\ProjetoInvillia\CompartilharJogos\CompartilharJogos.JWT\obj\Debug\netstandard2.0\CompartilharJogos.JWT.csprojAssemblyReference.cache
+E:\Documentos\ProjetoInvillia\CompartilharJogos\CompartilharJogos.JWT\obj\Debug\netstandard2.0\CompartilharJogos.JWT.AssemblyInfoInputs.cache
+E:\Documentos\ProjetoInvillia\CompartilharJogos\CompartilharJogos.JWT\obj\Debug\netstandard2.0\CompartilharJogos.JWT.AssemblyInfo.cs
+E:\Documentos\ProjetoInvillia\CompartilharJogos\CompartilharJogos.JWT\obj\Debug\netstandard2.0\CompartilharJogos.JWT.csproj.CoreCompileInputs.cache
+E:\Documentos\ProjetoInvillia\CompartilharJogos\CompartilharJogos.JWT\obj\Debug\netstandard2.0\CompartilharJogos.JWT.csproj.CopyComplete
+E:\Documentos\ProjetoInvillia\CompartilharJogos\CompartilharJogos.JWT\obj\Debug\netstandard2.0\CompartilharJogos.JWT.dll
+E:\Documentos\ProjetoInvillia\CompartilharJogos\CompartilharJogos.JWT\obj\Debug\netstandard2.0\CompartilharJogos.JWT.pdb

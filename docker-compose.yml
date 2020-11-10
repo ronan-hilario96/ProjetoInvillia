@@ -1,0 +1,54 @@
+version: "3"
+
+services:
+  #############################
+  # Database
+  #############################
+  projetoinvillia-db:
+    image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+    container_name: projetoinvillia-db
+    environment:
+      SA_PASSWORD: 'yourStrong(!)Password'
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: "Express"
+    ports:
+      - "1433:1433"
+    networks:
+      - projetoinvillia-network
+
+  #############################
+  # Front
+  #############################
+  projetoinvillia-front:
+    build:
+      dockerfile: ./CompartilharJogos/compartilharjogos.web/Dockerfile
+      context: .
+    image: ronanhilario/projetoinvillia-front:1
+    container_name: projetoinvillia-front
+    ports:
+      - "80:80"
+    networks:
+      - projetoinvillia-network
+
+  #############################
+  # Management API
+  #############################
+  projetoinvillia-api:
+    build:
+      dockerfile: ./CompartilharJogos/CompartilharJogos.Api/Dockerfile
+      context: .
+    image: ronanhilario/aspnetcoreapi:1
+    container_name: projetoinvillia-api
+    depends_on:
+      - projetoinvillia-db
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ASPNETCORE_URLS: http://+:54180
+    ports:
+      - 54180:54180
+    networks:
+      - projetoinvillia-network
+
+networks:
+  projetoinvillia-network:
+    driver: bridge
