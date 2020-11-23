@@ -9,7 +9,6 @@ namespace CompartilharJogos.Data.Context
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
-
         }
         public DbSet<User> User { get; set; }
         public DbSet<ShareGame> SharedGames { get; set; }
@@ -25,6 +24,10 @@ namespace CompartilharJogos.Data.Context
         public async Task Commit()
         {
             await SaveChangesAsync();
+        }
+        public Task RunMiGrate()
+        {
+            return Database.MigrateAsync();
         }
     }
 }

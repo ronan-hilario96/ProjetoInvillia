@@ -1,11 +1,11 @@
-﻿using CompartilharJogos.Data.Repository;
-using CompartilharJogos.Domain._Base;
+﻿using CompartilharJogos.Domain._Base;
 using CompartilharJogos.Domain.SharedGames;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.SignalR;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using CompartilharJogos.Domain.Users;
+using CompartilharJogos.JWT.Services;
 
 namespace CompartilharJogos.Api.Controllers
 {
@@ -15,18 +15,20 @@ namespace CompartilharJogos.Api.Controllers
     public class ShareGameController : ControllerBase
     {
         private readonly Share _share;
-        private readonly IShareGamesRepository _repository;
-        private readonly IRepository<ShareGame> _repository1;
+        private readonly IRepository<ShareGame> _repository;
+        private readonly ListGamesUser _listGamesUser;
 
-        public ShareGameController(Share share, IShareGamesRepository repository, IRepository<ShareGame> repository1) {
+        public ShareGameController(Share share, IRepository<ShareGame> repository, ListGamesUser listGamesUser) {
             _share = share;
             _repository = repository;
-            _repository1 = repository1;
+            _listGamesUser = listGamesUser;
         }
         [HttpGet]
         public Task<ICollection<ShareGame>> Get()
         {
-            return _repository.Consult();
+            string authorization = HttpContext.Request.Headers["Authorization"];
+            var idUser= TokenService.DecocodeToken(authorization.Replace("Bearer ", ""));
+            return _listGamesUser.GetListGames(idUser);
         }
         [HttpPost]
         public void Post([FromBody] ShareGamesDto dto)
@@ -34,9 +36,9 @@ namespace CompartilharJogos.Api.Controllers
             _share.Shared(dto);
         }
         [HttpDelete]
-        public void Delete(int Id)
+        public void Delete(int id)
         {
-            _repository1.Delete(Id);
+            _repository.Delete(id);
         }
     }
 }

@@ -39,28 +39,35 @@ export default {
     login: null,
     senha: null,
     validar: false,
-    exibirsenha: false,
+    exibirsenha: false
   }),
   computed: {
     ...mapState(["autenticacao"]),
   },
   methods: {
     entrar: async function() {
-      // await this.$store.dispatch("Autenticar", {login: this.login, senha: this.senha});
       if(this.validar){
         try {
           const response = await vue.axios.get(`user/login?username=${this.login}&password=${this.senha}`)
+
           localStorage.setItem('user',JSON.stringify(response.data.user))
           localStorage.setItem('jwt',response.data.token)
+
+          vue.axios.defaults.headers.common['Authorization'] = `Bearer ${response.data.token}`
+
+          const dataLogin = {
+            jwt: response.data.token, 
+            user: JSON.stringify(response.data.user)
+          }
+
+          this.$store.commit("setAutenticacao", dataLogin)
           this.$router.push("/");
         } catch(e) {
           console.error(e)
         }
       }
     },
-
     cadastro() {
-      // auth.logout().then(console.log).catch(console.warn);
       this.$router.push("/cadastrar_usuario");
     },
   },

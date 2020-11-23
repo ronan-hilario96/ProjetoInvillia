@@ -3,11 +3,13 @@ using CompartilharJogos.JWT.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 
 namespace CompartilharJogos.Api.Controllers
 {
     [ApiController]
     [Route("api/v1/[controller]")]
+    [AllowAnonymous]
     public class UserController : ControllerBase
     {
         private readonly SaveUser _save;
@@ -23,7 +25,6 @@ namespace CompartilharJogos.Api.Controllers
 
         [HttpGet]
         [Route("login")]
-        [AllowAnonymous]
         public async Task<IActionResult> Authenticate(string username, string password)
         {
             // Recupera o usuário
@@ -58,7 +59,6 @@ namespace CompartilharJogos.Api.Controllers
 
         [HttpPost]
         [Route("create-account")]
-        [AllowAnonymous]
         public async Task Create([FromBody]UserDto model)
         {
             _save.Save(model);

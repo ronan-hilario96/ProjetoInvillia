@@ -44,6 +44,7 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: "Development"
       ASPNETCORE_URLS: http://+:54180
+      STRINGCONNECTION: "Data Source=projetoinvillia-db; Database=CompartilharJogos;Persist Security Info=True;User ID=sa;Password=yourStrong(!)Password"
     ports:
       - 54180:54180
     networks:

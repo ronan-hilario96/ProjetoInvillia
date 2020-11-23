@@ -5,7 +5,7 @@ import axios from "axios";
 
 // Full config:  https://github.com/axios/axios#request-config
 // axios.defaults.baseURL = process.env.baseURL || process.env.apiUrl || '';
-axios.defaults.headers.common['Authorization'] = "Bearer "+localStorage.getItem("jwt") || "";
+axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem("jwt")}` || "";
 // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
 let config = {

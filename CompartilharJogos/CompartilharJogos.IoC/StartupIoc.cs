@@ -1,4 +1,5 @@
-﻿using CompartilharJogos.Data.Context;
+﻿using System;
+using CompartilharJogos.Data.Context;
 using CompartilharJogos.Data.Repository;
 using CompartilharJogos.Domain._Base;
 using CompartilharJogos.Domain.SharedGames;
@@ -13,6 +14,7 @@ namespace CompartilharJogos.IoC
     {
         public static void ConfigureServices(IServiceCollection service, IConfiguration configuration)
         {
+            // service.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(configuration["STRINGCONNECTION"]));
             service.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(configuration["ConnectionString"]));
 
             service.AddScoped(typeof(IRepository<>), typeof(RepositoryBase<>));
@@ -24,6 +26,12 @@ namespace CompartilharJogos.IoC
             service.AddScoped<SaveUser>();
             service.AddScoped<GetTolkenUser>();
             service.AddScoped<Share>();
+            service.AddScoped<ListGamesUser>();
+        }
+
+        public static void Migrate(IServiceProvider serviceProvider)
+        {
+            serviceProvider.GetService<ApplicationDbContext>().RunMiGrate().Wait();
         }
     }
 }

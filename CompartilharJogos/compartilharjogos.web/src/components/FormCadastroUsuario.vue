@@ -36,7 +36,9 @@
 </template>
 
 <script>
-import vue from "vue";
+import { mapState } from "vuex"
+import vue from "vue"
+
 export default {
   name: "FormCadastroUsuario",
   data: () => ({
@@ -49,6 +51,12 @@ export default {
     setColor: "green lighten-2"
   }),
   computed: {
+    ...mapState(["autenticacao"]),
+  },
+  watch: {
+    autenticacao: function(val) {
+      this.teste = val
+    }
   },
   methods: {
     cadastrar: async function(){
@@ -62,6 +70,17 @@ export default {
         try{
           await vue.axios.post("user/create-account", body);
           this.setColor = this.color[1]
+
+          const response = await vue.axios.get(`user/login?username=${this.login}&password=${this.senha}`)
+          localStorage.setItem('user',JSON.stringify(response.data.user))
+          localStorage.setItem('jwt',response.data.token)
+          vue.axios.defaults.headers.common['Authorization'] = `Bearer ${response.data.token}`
+          const dataLogin = {
+            jwt: response.data.token,
+            user: JSON.stringify(response.data.user)
+          }
+          this.$store.commit("setAutenticacao", dataLogin)
+
           this.$router.push("/");
         } catch(e) {
           this.setColor = this.color[0]
