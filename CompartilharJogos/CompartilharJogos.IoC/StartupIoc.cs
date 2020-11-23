@@ -14,7 +14,6 @@ namespace CompartilharJogos.IoC
     {
         public static void ConfigureServices(IServiceCollection service, IConfiguration configuration)
         {
-            // service.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(configuration["STRINGCONNECTION"]));
             service.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(configuration["ConnectionString"]));
 
             service.AddScoped(typeof(IRepository<>), typeof(RepositoryBase<>));
